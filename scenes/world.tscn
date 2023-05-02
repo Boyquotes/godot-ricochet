@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bafb4i38ribh1"]
+
+[ext_resource type="PackedScene" uid="uid://dpml23hehwh7y" path="res://scenes/players/zel-boy.tscn" id="2_3pc2m"]
+[ext_resource type="PackedScene" uid="uid://c2afyl0br5mem" path="res://scenes/enemies/red-demon.tscn" id="3_e4etl"]
+
+[node name="World" type="Node2D"]
+
+[node name="zel-boy" parent="." instance=ExtResource("2_3pc2m")]
+
+[node name="red-demon" parent="." instance=ExtResource("3_e4etl")]
+position = Vector2(194, 69)
