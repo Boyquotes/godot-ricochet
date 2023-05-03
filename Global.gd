@@ -1,7 +1,10 @@
-extends Area2D
-class_name Hitbox
-@onready var damage = owner.damage
-@onready var can_dmg = false
+extends Node
+
+const T1_MOBS = [ 
+	preload("res://scenes/enemies/red-demon.tscn")
+]
+var rng = RandomNumberGenerator.new()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -11,5 +14,6 @@ func _ready():
 func _process(delta):
 	pass
 
-func damage_dealt(): 
-	owner.queue_free()
+func rand_int(r): 
+	return rng.randi() % r
+

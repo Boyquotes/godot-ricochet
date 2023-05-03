@@ -15,10 +15,14 @@ run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [display]
 
 window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_height=320
 window/stretch/mode="viewport"
 
 [input]
@@ -58,3 +62,4 @@ ui_down={
 2d_physics/layer_2="enemy"
 2d_physics/layer_3="spawner"
 2d_physics/layer_4="projectile"
+2d_physics/layer_5="environment"

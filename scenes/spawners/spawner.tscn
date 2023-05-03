@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://csmiik8jr13hf"]
+
+[ext_resource type="Script" path="res://scripts/spawner.gd" id="1_ap5cl"]
+[ext_resource type="Texture2D" uid="uid://cggffexgyd17m" path="res://icon.svg" id="2_idmcd"]
+[ext_resource type="Script" path="res://scripts/Hurtbox.gd" id="3_tibjw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_leldw"]
+size = Vector2(72, 83)
+
+[node name="Spawner" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 31
+script = ExtResource("1_ap5cl")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("2_idmcd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_leldw")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+script = ExtResource("3_tibjw")
+
+[node name="spawn_rate" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(141, 16)
+
+[connection signal="timeout" from="spawn_rate" to="." method="_on_spawn_rate_timeout"]

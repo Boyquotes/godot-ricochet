@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjun0766da884"]
+[gd_scene load_steps=6 format=3 uid="uid://bjun0766da884"]
 
 [ext_resource type="Script" path="res://scripts/bullet.gd" id="1_mccjg"]
 [ext_resource type="Texture2D" uid="uid://cggffexgyd17m" path="res://icon.svg" id="2_emtd6"]
@@ -7,10 +7,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jhq16"]
 size = Vector2(32, 32)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0sfrd"]
+radius = 25.0
+
 [node name="Bullet" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 14
 script = ExtResource("1_mccjg")
+SPEED = 10.0
 
 [node name="Icon" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
@@ -21,3 +25,6 @@ shape = SubResource("RectangleShape2D_jhq16")
 
 [node name="Hitbox" type="Area2D" parent="."]
 script = ExtResource("3_4k54k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_0sfrd")

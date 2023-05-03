@@ -1,11 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://bafb4i38ribh1"]
+[gd_scene load_steps=5 format=3 uid="uid://bafb4i38ribh1"]
 
 [ext_resource type="PackedScene" uid="uid://dpml23hehwh7y" path="res://scenes/players/zel-boy.tscn" id="2_3pc2m"]
 [ext_resource type="PackedScene" uid="uid://c2afyl0br5mem" path="res://scenes/enemies/red-demon.tscn" id="3_e4etl"]
+[ext_resource type="PackedScene" uid="uid://cxj4aeoefopqb" path="res://scenes/players/GameMap.tscn" id="3_mqcqe"]
+[ext_resource type="PackedScene" uid="uid://cg0a0j4a81phf" path="res://scenes/spawners/t_1_spawner.tscn" id="4_qg500"]
 
 [node name="World" type="Node2D"]
 
+[node name="TileMap" parent="." instance=ExtResource("3_mqcqe")]
+
 [node name="zel-boy" parent="." instance=ExtResource("2_3pc2m")]
+position = Vector2(81, 140)
+
+[node name="Camera2D" type="Camera2D" parent="zel-boy"]
+zoom = Vector2(1.5, 1.5)
 
 [node name="red-demon" parent="." instance=ExtResource("3_e4etl")]
-position = Vector2(194, 69)
+position = Vector2(270, 166)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -99
+offset_left = -336.0
+offset_top = -146.0
+offset_right = 1752.0
+offset_bottom = 1198.0
+color = Color(0, 0, 0, 1)
+
+[node name="T1-spawner" parent="." instance=ExtResource("4_qg500")]
+position = Vector2(264, 121)
