@@ -1,5 +1,5 @@
 extends Area2D
-
+class_name Hurtbox
 
 func _ready(): 
 	self.connect("area_entered",Callable(self,"_on_area_entered"))
