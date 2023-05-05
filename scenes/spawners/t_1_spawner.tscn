@@ -1,18 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://cg0a0j4a81phf"]
+[gd_scene load_steps=8 format=3 uid="uid://cg0a0j4a81phf"]
 
 [ext_resource type="PackedScene" uid="uid://csmiik8jr13hf" path="res://scenes/spawners/spawner.tscn" id="1_31mys"]
 [ext_resource type="Texture2D" uid="uid://dvj6mrgxlntau" path="res://assets/0x72_DungeonTilesetII_v1.5/0x72_DungeonTilesetII_v1.5.png" id="2_7dai2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_si7ur"]
-radius = 7.0
-height = 34.0
+radius = 6.0
+height = 32.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kjr8j"]
 radius = 8.0
-height = 36.0
+height = 34.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4yfj"]
-size = Vector2(15, 13)
+size = Vector2(16, 9)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eu5cs"]
+radius = 33.0673
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1f0dn"]
+radius = 31.0161
 
 [node name="T1-spawner" instance=ExtResource("1_31mys")]
 
@@ -22,13 +28,31 @@ region_enabled = true
 region_rect = Rect2(96, 81, 17, 60)
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(0, -10)
+position = Vector2(0, -12)
 shape = SubResource("CapsuleShape2D_si7ur")
+
+[node name="Hurtbox" parent="." index="2"]
+collision_layer = 4
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2(0, -11)
 shape = SubResource("CapsuleShape2D_kjr8j")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="3"]
-position = Vector2(-0.5, 9.5)
+position = Vector2(0, 11.5)
 shape = SubResource("RectangleShape2D_s4yfj")
+
+[node name="spawn_rate" parent="." index="4"]
+wait_time = 1.0
+
+[node name="spawn_area" type="Area2D" parent="." index="6"]
+collision_layer = 4
+collision_mask = 22
+
+[node name="spawn_zone" type="CollisionShape2D" parent="spawn_area" index="0"]
+scale = Vector2(2.69205, 2.69205)
+shape = SubResource("CircleShape2D_eu5cs")
+
+[node name="nospawn_zone" type="CollisionShape2D" parent="spawn_area" index="1"]
+shape = SubResource("CircleShape2D_1f0dn")
