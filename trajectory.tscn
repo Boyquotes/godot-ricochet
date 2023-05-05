@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://5q2vi0wkbs2t"]
+
+[ext_resource type="Script" path="res://trajectory.gd" id="1_7p44x"]
+[ext_resource type="Script" path="res://collision_test.gd" id="1_l6wa3"]
+
+[node name="Trajectory" type="Line2D"]
+width = 1.0
+script = ExtResource("1_7p44x")
+
+[node name="GhostBody" type="CharacterBody2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_l6wa3")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="GhostBody"]
+polygon = PackedVector2Array(12, -1, 12, 0, 9, 2, 7, 2, 6, 1, -1, 1, -4, 3, -9, 3, -9, 1, -8, 0, -8, -1, -9, -2, -9, -4, -4, -4, -1, -2, 6, -2, 7, -3, 9, -3)
