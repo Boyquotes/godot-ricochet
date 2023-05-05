@@ -20,17 +20,9 @@ zoom = Vector2(1.5, 1.5)
 
 [node name="red-demon" parent="." instance=ExtResource("3_e4etl")]
 position = Vector2(270, 166)
-damage = 30
-speed = 50
-leap_factor = 10000
-mob_tier = 1
 
 [node name="red-demon2" parent="." instance=ExtResource("3_e4etl")]
 position = Vector2(98, 209)
-damage = 30
-speed = 50
-leap_factor = 10000
-mob_tier = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -99

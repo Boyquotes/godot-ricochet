@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Player
 @onready var anim_p = $AnimationPlayer
 const SPEED = 300.0
 var weapon = null
