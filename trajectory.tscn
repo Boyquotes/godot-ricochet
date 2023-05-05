@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://5q2vi0wkbs2t"]
+[gd_scene load_steps=4 format=3 uid="uid://5q2vi0wkbs2t"]
 
 [ext_resource type="Script" path="res://trajectory.gd" id="1_7p44x"]
 [ext_resource type="Script" path="res://collision_test.gd" id="1_l6wa3"]
+[ext_resource type="Texture2D" uid="uid://cppnhsp6atp3g" path="res://assets/PikPng.com_dotted-line-png_554404.png" id="1_n7sij"]
 
 [node name="Trajectory" type="Line2D"]
-width = 1.0
+z_index = -1
+width = 3.0
+default_color = Color(0, 0, 0, 1)
+texture = ExtResource("1_n7sij")
+texture_mode = 1
 script = ExtResource("1_7p44x")
 
 [node name="GhostBody" type="CharacterBody2D" parent="."]

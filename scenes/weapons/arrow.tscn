@@ -9,6 +9,7 @@ radius = 8.12795
 
 [node name="arrow" instance=ExtResource("1_h0uck")]
 collision_mask = 2
+ricochey = 1
 
 [node name="CollisionShape2D" parent="." index="0" instance=ExtResource("2_q5533")]
 

@@ -23,6 +23,7 @@ shape = SubResource("RectangleShape2D_leldw")
 script = ExtResource("3_tibjw")
 
 [node name="spawn_rate" type="Timer" parent="."]
+autostart = true
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(141, 16)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://duhcnuglcsqxk"]
+[gd_scene load_steps=7 format=3 uid="uid://duhcnuglcsqxk"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_1b6yp"]
 [ext_resource type="PackedScene" uid="uid://dpml23hehwh7y" path="res://scenes/players/zel-boy.tscn" id="2_3pc2m"]
 [ext_resource type="PackedScene" uid="uid://c2afyl0br5mem" path="res://scenes/enemies/red-demon.tscn" id="3_e4etl"]
 [ext_resource type="PackedScene" uid="uid://cxj4aeoefopqb" path="res://scenes/players/GameMap.tscn" id="3_mqcqe"]
+[ext_resource type="Script" path="res://screen_shake.gd" id="4_kvtsf"]
 [ext_resource type="PackedScene" uid="uid://cg0a0j4a81phf" path="res://scenes/spawners/t_1_spawner.tscn" id="4_qg500"]
 
 [node name="World" type="Node2D"]
@@ -17,6 +18,7 @@ scale = Vector2(1, 1)
 
 [node name="Camera2D" type="Camera2D" parent="zel-boy"]
 zoom = Vector2(1.5, 1.5)
+script = ExtResource("4_kvtsf")
 
 [node name="red-demon" parent="." instance=ExtResource("3_e4etl")]
 position = Vector2(270, 166)

@@ -1,6 +1,6 @@
 extends Line2D
 
-@export var MAX_POINTS =50
+@export var MAX_POINTS =120
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -14,4 +14,3 @@ func draw_traject(delta):
 	for i in MAX_POINTS: 
 		add_point($GhostBody.position)
 		$GhostBody._motion(delta)
-		

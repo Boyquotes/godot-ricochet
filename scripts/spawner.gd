@@ -9,18 +9,11 @@ extends StaticBody2D
 var spawnable = true
 var spawn_point = null
 var potential_mob = null
-var current_health = 100:set=_set_health
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	spawn_point = generate_spawn_point()
 	pass
 
-	
-
-func _set_health(new_hp): 
-	current_health = new_hp 
-	if current_health <= 0: 
-		die()
 func die(): 
 	queue_free()
 
@@ -28,7 +21,7 @@ func _process(delta):
 	pass
 	
 func receive_hit(hitbox:Hitbox): 
-	current_health -= hitbox.damage
+	$Hurtbox.current_health -= hitbox.damage
 	hitbox.damage_dealt()
 func ran_neg(): 
 	var r = Global.rand_int(2)

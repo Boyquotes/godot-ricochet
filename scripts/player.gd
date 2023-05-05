@@ -1,7 +1,10 @@
 extends CharacterBody2D
 class_name Player
+
+@export var damage = 30
+@export var SPEED = 300.0
+@export var max_health = 100
 @onready var anim_p = $AnimationPlayer
-const SPEED = 300.0
 var weapon = null
 
 func _ready():
@@ -38,6 +41,8 @@ func _physics_process(delta):
 	else: 
 		anim_p.play("idle")
 	move_and_slide()
+func receive_hit(hitbox:Hitbox): 
+	$Hurtbox.current_health -= hitbox.damage
 	
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:

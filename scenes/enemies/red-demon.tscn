@@ -74,6 +74,7 @@ radius = 32.311
 script = ExtResource("2_pe1if")
 damage = 30
 speed = 50
+max_health = 100
 leap_factor = 10000
 
 [node name="Icon" parent="." index="0"]
@@ -112,7 +113,7 @@ position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_bu0su")
 
 [node name="patrol_timer" type="Timer" parent="." index="6"]
-wait_time = 5.0
+wait_time = 10.0
 autostart = true
 
 [node name="chase_wearoff" type="Timer" parent="." index="7"]

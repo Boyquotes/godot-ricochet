@@ -31,8 +31,9 @@ func _motion(delta):
 			rich_counts+=1
 		else: 
 			queue_free()
-	
-	
+
+func _damage_dealt(): 
+	queue_free()
 func set_veloc(dir:Vector2): 
 	dir = dir.normalized()
 	veloc = dir * SPEED

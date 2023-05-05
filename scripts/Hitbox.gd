@@ -1,5 +1,6 @@
 extends Area2D
 class_name Hitbox
+
 @onready var damage = owner.damage
 @export var can_dmg = false
 # Called when the node enters the scene tree for the first time.
@@ -12,4 +13,6 @@ func _process(delta):
 	pass
 
 func damage_dealt(): 
-	owner.queue_free()
+	if owner.has_method("_damage_dealt"):
+		owner._damage_dealt()
+	pass

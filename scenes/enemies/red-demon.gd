@@ -2,9 +2,12 @@ extends Enemy
 
 @export var damage = 30
 @export var speed = 50
+@export var max_health = 100
 @export var leap_factor = 10000
 @onready var anim_p = $AnimationPlayer
 @onready var RedDemonScene = preload("res://scenes/enemies/red-demon.tscn")
+
+
 enum {
 	CHASE, 
 	WANDER,
@@ -31,7 +34,6 @@ func _physics_process(delta):
 				state=IDLE
 		CHASE:
 			if chasing_target: 
-				print("hi")
 				velocity=global_position.direction_to(chasing_target.global_position)*speed
 	move_and_slide()
 	pass
@@ -69,9 +71,12 @@ func _on_chasing_zone_body_entered(body):
 func _on_chasing_zone_body_exited(body):
 	if body is Player:
 		$chase_wearoff.start()
-	pass # Replace with function body.
+	pass # Replace with function body.d
 
-
+func receive_hit(hitbox:Hitbox): 
+	$Hurtbox.current_health-= hitbox.damage
+#	anim_p("hitted")
+	pass
 func _on_chase_wearoff_timeout():
 	state = IDLE 
 	$patrol_timer.start()

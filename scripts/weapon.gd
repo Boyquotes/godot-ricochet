@@ -17,7 +17,7 @@ func _physics_process(delta):
 		aim_pos=get_global_mouse_position()
 		if !has_node("./Trajectory"):
 			var traject = TrajectScene.instantiate()
-			traject.position = $shoot_pos.position
+			traject.position = $traject_pos.position
 			var shoot_dir = holding_bullet.global_position.direction_to(get_global_mouse_position())
 			traject.set_veloc(holding_bullet.SPEED*shoot_dir)
 			add_child(traject)
