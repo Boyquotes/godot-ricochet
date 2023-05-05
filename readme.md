@@ -12,10 +12,14 @@ I dont know how OOP works in gdscript:
 	- export variable in parent disappear in child 
 
 TRAJECTORY :) 
-	- MUST SET TEST BODY size = REAL BULLET 
+	- MUST SET TEST BODY collision size = REAL BULLET 
 	- that costs me 3 hours
 
+WANDERING: 
+	- time-out, pick a point in zone 
+	- wander state: move toward that point, end wandering when distance to that point is < TOLERANCE
 
+	
 COLLISIONS: 
 	- detect empty space => lots of recursion
 	-> collision is used async :) 

@@ -12,7 +12,12 @@ const WEAPONS = {
 func _ready():
 	pass # Replace with function body.
 
-
+func ran_neg(): 
+	var r = Global.rand_int(2)
+	if r == 0: 
+		return -1 
+	else:
+		return 1
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
@@ -22,3 +27,7 @@ func rand_int(r):
 	return rng.randi() % r
 func get_mouse_pos(): 
 	pass
+func rand_point_in_circle(radius): 
+	var x = ran_neg() * rand_float(radius)
+	var y = ran_neg() * sqrt(radius*radius-x*x)
+	return Vector2(x,y)

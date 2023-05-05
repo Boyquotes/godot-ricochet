@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://1n8xqlun6odh"]
+[gd_scene load_steps=5 format=3 uid="uid://1n8xqlun6odh"]
 
 [ext_resource type="Texture2D" uid="uid://cggffexgyd17m" path="res://icon.svg" id="1_6jrjb"]
 [ext_resource type="Script" path="res://scenes/enemies/enemy.gd" id="1_g6i4c"]
+[ext_resource type="Script" path="res://scripts/Hitbox.gd" id="3_4gp0e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u3lr5"]
 size = Vector2(10, 12)
@@ -18,3 +19,6 @@ texture = ExtResource("1_6jrjb")
 shape = SubResource("RectangleShape2D_u3lr5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Hitbox" type="Area2D" parent="."]
+script = ExtResource("3_4gp0e")

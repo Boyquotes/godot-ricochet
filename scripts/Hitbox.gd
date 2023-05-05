@@ -1,7 +1,7 @@
 extends Area2D
 class_name Hitbox
 @onready var damage = owner.damage
-@onready var can_dmg = false
+@export var can_dmg = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
