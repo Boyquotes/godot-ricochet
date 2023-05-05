@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfkxad00wnogp"]
+
+[ext_resource type="PackedScene" uid="uid://bm1goiw5bj6j1" path="res://scenes/weapons/weapon.tscn" id="1_ua8ua"]
+[ext_resource type="Texture2D" uid="uid://dvj6mrgxlntau" path="res://assets/0x72_DungeonTilesetII_v1.5/0x72_DungeonTilesetII_v1.5.png" id="2_0unsm"]
+[ext_resource type="PackedScene" uid="uid://4hxcrhwpa8ph" path="res://scenes/weapons/arrow.tscn" id="2_we2cg"]
+
+[node name="Bow" instance=ExtResource("1_ua8ua")]
+BulletScene = ExtResource("2_we2cg")
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_0unsm")
+hframes = 2
+region_enabled = true
+region_rect = Rect2(288, 192, 32, 30)
+
+[node name="shoot_pos" parent="." index="1"]
+position = Vector2(3, 1)
+rotation = -3.14159
